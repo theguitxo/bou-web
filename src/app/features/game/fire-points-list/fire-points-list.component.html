@@ -1,0 +1,31 @@
+<div class="fire-point-list">
+  @for(item of gameFirePoints(); track item) {
+  <div class="card-fire-point" [id]="item.code" [ngStyle]="{ 'background-image': 'url(' + item.headerImage + ')' }">
+    <!-- imagen -->
+    <img [alt]="item.firePointTypeText" [src]="item.headerImage" />
+
+    <!-- tiitulo -->
+    <div class="font-arial card-header">
+      <div class="card-title">{{ item.translateKey | translate }} </div>
+    </div>
+
+    <!-- info -->
+    <div class="font-arial card-content">
+      <div class="chip-type" [ngStyle]="{ 'color': item.firePointTypeColor }">{{ item.firePointTypeText | translate }}
+      </div>
+
+      <div class="fire-point-status">
+        @if (item.played) { {{ 'FIRE_POINT_CARD.SCORE' | translate : {
+        score: item.scores?.TOTAL?.score } }} } @else { {{
+        'FIRE_POINT_CARD.PENDING' | translate }} }
+      </div>
+
+      <button class="primary-button little" [class.disabled]="!item.enabled || item.played || checkingFirePoint()"
+        [disabled]="!item.enabled || item.played || checkingFirePoint()" (click)="playPoint(item)">
+        {{ 'FIRE_POINT_CARD.PLAY' | translate }}
+        <div class="arrow-right"></div>
+      </button>
+    </div>
+  </div>
+  }
+</div>

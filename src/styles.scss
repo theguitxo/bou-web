@@ -1,1 +1,173 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "luckiestguy";
+  src:
+    url("/bou-web/fonts/LuckiestGuy-Regular.eot") format("embedded-opentype"),
+    url("/bou-web/fonts/LuckiestGuy-Regular.woff") format("woff"),
+    url("/bou-web/fonts/LuckiestGuy-Regular.woff2") format("woff2"),
+    url("/bou-web/fonts/LuckiestGuy-Regular.ttf") format("truetype");
+}
+
+:root {
+  --background-color: #74071a;
+  --text-color: #ffffff;
+  --color-primary: #ffffff;
+  --color-primary-rgb: 255, 255, 255;
+  --color-primary-contrast: #000000;
+  --color-primary-contrast-rgb: 0, 0, 0;
+  --color-secundary: #197407;
+
+  --tetradic-primary-color: #74071a;
+
+  --tetradic-secondary-color: #197407;
+  --tetradic-secondary-dark-color: #0f4504;
+  --tetradic-secondary-light-color: #75ab6a;
+
+  --tetradic-tertiary-color: #072d74;
+
+  --tetradic-fourth-color: #743407;
+  --tetradic-fourth-light-color: #ab856a;
+  --tetradic-fourth-dark-color: #451f04;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  letter-spacing: .125rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tetradic-fourth-dark-color) var(--tetradic-fourth-light-color);
+
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+/* Ancho y alto de la barra */
+::-webkit-scrollbar {
+  width: 8px;
+  /* Para barras verticales */
+  height: 8px;
+  /* Para barras horizontales */
+}
+
+/* Fondo/Canal sobre el que se mueve el pulgar */
+::-webkit-scrollbar-track {
+  background: var(--tetradic-fourth-light-color);
+  border-radius: 4px;
+}
+
+/* El pulgar (la barra que arrastras) */
+::-webkit-scrollbar-thumb {
+  background: var(--tetradic-fourth-dark-color);
+  border-radius: 4px;
+}
+
+/* Estado hover (cuando pasas el ratón por encima) */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tetradic-fourth-dark-color);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+
+  background: url('/bou-web/img/background.jpg');
+  background-size: cover;
+
+  position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.font-luciestguy {
+  font-family: luckiestguy;
+}
+
+.main-container {
+  background-color: var(--background-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  gap: 2rem;
+}
+
+.buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+
+  & div {
+    flex: 1 1 auto;
+  }
+
+  &.alignRight {
+    justify-content: flex-end;
+  }
+}
+
+.primary-button {
+  background-color: var(--tetradic-secondary-color);
+  color: #ffffff;
+  padding: .75rem .5rem .5rem .5rem;
+  font-family: luckiestguy;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+
+  border-radius: 0.5rem;
+
+  border-bottom: solid 0.25rem var(--tetradic-secondary-dark-color);
+  border-right: solid 0.25rem var(--tetradic-secondary-dark-color);
+  border-top: solid 0.25rem var(--tetradic-secondary-light-color);
+  border-left: solid 0.25rem var(--tetradic-secondary-light-color);
+
+  cursor: pointer;
+
+
+  &.full {
+    width: 100%;
+  }
+
+  &.little {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &.disabled {
+    filter: grayscale(1);
+  }
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1rem;
+}
+
+.padding-025 {
+  padding: .25rem !important;
+}
+
+.padding-top-075 {
+  padding-top: .75rem !important;
+}

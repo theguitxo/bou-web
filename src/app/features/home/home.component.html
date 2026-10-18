@@ -1,0 +1,29 @@
+<div class="main-container">
+    <video autoplay loop [volume]="0" src="video/home.mp4" poster="video/home.jpg"></video>
+    <div class="video-mask"></div>
+    <div class="home-container">
+        <div class="settings-container">
+            <img src="icons/settings.png" (click)="navigateConfiguration()" />
+            <span class="font-luciestguy settings-tooltip">{{ 'CONFIGURATION.TITLE' | translate }}</span>
+        </div>
+        <div class="logo-container">
+            <div class="logo-box">
+                <div class="logo-bou">
+                    <img src="img/logo_bou.svg" />
+                </div>
+                <div class="logo-home">
+                    <app-logo-home></app-logo-home>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-wrapper">
+            <button class="primary-button full" (click)="checkInstructionsValues()">
+                {{ 'HOME.PLAY' | translate }}
+            </button>
+            <button class="primary-button full" (click)="navigateInstructions()">
+                {{ 'HOME.INSTRUCTIONS' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

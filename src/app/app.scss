@@ -1,0 +1,64 @@
+:host {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    :host {
+        aspect-ratio: 9 / 16;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    :host {
+        width: 100%;
+    }
+}
+
+.logo-bou {
+    width: 50%;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.loader-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    h3 {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+.loading-txt {
+    &::after {
+        content: '';
+        animation: points 1.5s infinite;
+    }
+}
+
+@keyframes points {
+    0% {
+        content: '';
+    }
+
+    25% {
+        content: '.';
+    }
+
+    50% {
+        content: '..';
+    }
+
+    75% {
+        content: '...';
+    }
+}

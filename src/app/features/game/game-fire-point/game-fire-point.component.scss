@@ -1,0 +1,76 @@
+.container {
+  display: block;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  padding: 0;
+}
+
+.fire-points-buttons {
+  display: flex;
+  gap: 1rem;
+  padding: .5rem 0;
+}
+
+.fire-points-container {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fire-points-go-button {
+  padding: .5rem;
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.fire-points-item {
+  height: 100%;
+  border-radius: 1.5rem;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border: solid 2px var(--tetradic-fourth-dark-color);
+}
+
+.timer-bar-container {
+  padding: 1rem;
+  width: 100%;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .timer-bar-border {
+    border: solid 2px var(--tetradic-fourth-light-color);
+    width: 100%;
+    height: 1.5rem;
+    border-radius: .75rem;
+    overflow: hidden;
+
+    & .timer-bar-content {
+      background-color: var(--tetradic-fourth-light-color);
+      width: 0;
+      height: 1.5rem;
+      animation-timing-function: linear;
+      animation-name: timebar;
+      // animation-duration: 15s;
+    }
+  }
+}
+
+@keyframes timebar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

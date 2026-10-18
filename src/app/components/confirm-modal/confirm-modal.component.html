@@ -1,0 +1,22 @@
+<app-modal-wrapper [width]="'450px'">
+    <div class="padding-bottom-1" [class.justified]="contentJustified()" [class.centered]="!contentJustified()"
+        [innerHTML]="trustedContent()">
+    </div>
+    <div class="buttons-wrapper" [class.padding-bottom-1]="showCheck()">
+        @if(showLeftButton()) {
+        <button class="primary-button full" (click)="handleButton(true)">
+            {{ leftButtonStr() | translate }}
+        </button>
+        }
+        @if(showRightButton()) {
+        <button class="primary-button full" (click)="handleButton(false)">
+            {{ rightButtonStr() | translate }}
+        </button>
+        }
+    </div>
+    @if (showCheck()) {
+    <div class="checkbox-container">
+        <input type="checkbox" (change)="onChangeCheck($event)">{{ checkStr() | translate }}
+    </div>
+    }
+</app-modal-wrapper>

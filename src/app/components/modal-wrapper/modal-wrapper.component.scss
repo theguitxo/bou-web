@@ -1,0 +1,25 @@
+.blackdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, .75);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 90%;
+    background-color: var(--tetradic-fourth-color);
+
+    border-top: solid 0.25rem var(--tetradic-fourth-light-color);
+    border-left: solid 0.25rem var(--tetradic-fourth-light-color);
+    border-bottom: solid 0.25rem var(--tetradic-fourth-dark-color);
+    border-right: solid 0.25rem var(--tetradic-fourth-dark-color);
+
+    border-radius: 0.25rem;
+}

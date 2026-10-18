@@ -1,0 +1,47 @@
+<div class="main-container">
+    <div class="embla" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents"
+        (emblaChange)="onEmblaChange($event)">
+        <div class="embla__container">
+            @for (slideInfo of slidesInfo(); track slideInfo) {
+            <div class="embla__slide">
+                <div class="instructions-page">
+                    <div class="instructions-content">
+                        @for (object of slideInfo.objects; track object; let isLast = $last) {
+                        @switch (object.type) { @case('title') {
+                        <div class="slide-item" [class.with-margin]="!isLast">
+                            <h1>{{ object.value }}</h1>
+                        </div>
+                        } @case ('text') {
+                        <div class="slide-item text" [class.with-margin]="!isLast">
+                            {{ object.value }}
+                        </div>
+                        } @case ('html') {
+                        <div class="slide-item text" [innerHTML]="object.value" [class.with-margin]="!isLast"></div>
+                        } @case ('image') {
+                        <div class="slide-item image" [class.with-margin]="!isLast"
+                            [class.image-start]="object.imageAlignement === 'start'"
+                            [class.image-center]="object.imageAlignement === 'center'"
+                            [class.image-end]="object.imageAlignement === 'end'" [class.with-margin]="!isLast">
+                            <img [src]="object.value" />
+                        </div>
+
+                        } } }
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="embla__dots">
+        @for (snap of scrollSnaps(); track $index) {
+        <button type="button" class="embla__dot" [class.embla__dot--selected]="$index === selectedIndex()"
+            (click)="scrollTo($index)" [attr.aria-label]="'Ir al slide ' + ($index + 1)">
+        </button>
+        }
+    </div>
+
+    <button class="primary-button full" (click)="goHome()">
+        {{ 'BUTTONS.EXIT' | translate }}
+    </button>
+</div>

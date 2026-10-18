@@ -1,0 +1,114 @@
+.main-container {
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.embla {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.instructions-page {
+    overflow: hidden;
+    padding: .15rem .2rem .15rem 0;
+    width: 100%;
+    height: 100%;
+
+    border: solid 4px var(--tetradic-fourth-dark-color);
+    border-radius: 1rem;
+    background-color: var(--tetradic-fourth-light-color);
+    color: var(--tetradic-fourth-color);
+    box-sizing: border-box;
+}
+
+.instructions-content {
+    overflow: auto;
+    padding: 0 1rem 1rem 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.embla__container {
+    display: flex;
+    height: 100%;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+/* Dots wrapper */
+.embla__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Dot individual */
+.embla__dot {
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--tetradic-fourth-light-color);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Dot activo */
+.embla__dot--selected {
+    background-color: var(--tetradic-fourth-dark-color);
+    transform: scale(1.5);
+}
+
+.slide-item {
+    font-size: 1rem;
+
+    @media screen and (min-resolution: 240dpi) {
+        font-size: 1.5rem;
+    }
+
+    &.with-margin {
+        margin-bottom: 1.5rem !important;
+    }
+
+    & h1 {
+        font-weight: bold;
+        font-size: 2rem;
+
+        @media screen and (min-resolution: 240dpi) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &.text {
+        text-align: justify;
+    }
+
+    &.image {
+        display: flex;
+        margin: 0 auto;
+        width: 75%;
+
+        &.image-start {
+            justify-content: flex-start;
+        }
+
+        &.image-center {
+            justify-content: center;
+        }
+
+        &.image-end {
+            justify-content: flex-end;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.progress-container {
+    position: relative;
+    width: 80%;
+    height: .75rem;
+    margin: 0 auto;
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 9999px;
+}
+
+.bar-background {
+    width: 100%;
+    background-color: var(--tetradic-fourth-color);
+}
+
+.bar-foreground {
+    background-color: #ffffff;
+}
+
+.bar-border {
+    width: 100%;
+    border: solid 2px var(--tetradic-fourth-dark-color);
+}

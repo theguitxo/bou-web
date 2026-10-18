@@ -1,0 +1,52 @@
+@if(firePoint()) {
+<div class="container">
+  <!-- TITLE -->
+  @if(firePoint()) {
+  <app-fire-point-title [gameFirePoint]="firePoint()!"></app-fire-point-title>
+  }
+
+  <div class="fire-points-container">
+    <!-- HEAD / TAIL BUTTONS -->
+    <div class="fire-points-buttons">
+      <button class="primary-button full" [class.disabled]="showHeadValue()" [disabled]="showHeadValue()"
+        (click)="showHead()">
+        {{ 'FIRE_POINTS.HEAD_POINTS' | translate }}
+      </button>
+      <button class="primary-button full" [class.disabled]="showBackValue()" [disabled]="showBackValue()"
+        (click)="showBack()">
+        {{ 'FIRE_POINTS.BACK_POINTS' | translate }}
+      </button>
+    </div>
+
+    <!-- HEAD / TAIL -->
+    @if (showHeadValue()) {
+    <div class="fire-points-item" slot="content" [style.backgroundImage]="'url(' + firePoint()?.backgroundImage + ')'">
+      <app-head-fire-points [points]="firePoint()?.playFireworksPoints" [mode]="'PLAY'" />
+    </div>
+    } @if (showBackValue()) {
+    <div class="fire-points-item" slot="content" [style.backgroundImage]="'url(' + firePoint()?.backgroundImage + ')'">
+      <app-back-fire-points [points]="firePoint()?.playFireworksPoints" [mode]="'PLAY'" />
+    </div>
+    }
+
+    <!-- BUTTONS -->
+    @if (showButtons()) {
+    <div class="fire-points-go-button">
+      <button class="primary-button full" (click)="checkGamedFirePoint()">
+        {{ 'GAME.CHECK_POINTS_BUTTON' | translate }}
+      </button>
+      <button class="primary-button full" [class.disabled]="disableGameHelps()" [disabled]="disableGameHelps()"
+        (click)="showHelp()">
+        {{ 'BUTTONS.HELP' | translate : { value: gameHelps() } }}
+      </button>
+    </div>
+    } @else {
+    <div class="timer-bar-container">
+      <div class="timer-bar-border">
+        <div class="timer-bar-content" [style.animationDuration]="gameHelpDurationStyle()"></div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+}

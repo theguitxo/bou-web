@@ -1,0 +1,11 @@
+<div class="main-container">
+    <div class="game-container">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="button-container">
+        <button class="primary-button full" [class.disabled]="checkingFirePoint()" (click)="checkExitGameModal()"
+            [disabled]="checkingFirePoint()">
+            {{ 'BUTTONS.EXIT' | translate }}
+        </button>
+    </div>
+</div>

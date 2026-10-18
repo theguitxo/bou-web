@@ -1,0 +1,16 @@
+<app-modal-wrapper [width]="'450px'">
+  <div class="app-modal-content">
+    <div class="fire-work-info">
+      <h3 class="font-arial padding-bottom-1">{{ name() | translate }}</h3>
+      <img [src]="fireworksImages().get(firework())" />
+      <div class="font-arial padding-bottom-1">
+        {{ description() | translate }}
+      </div>
+    </div>
+    <div>
+      <button class="primary-button full" (click)="closeModal()">
+        {{ "BUTTONS.CLOSE" | translate }}
+      </button>
+    </div>
+  </div>
+</app-modal-wrapper>

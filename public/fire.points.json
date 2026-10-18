@@ -1,0 +1,52 @@
+[
+  {
+    "code": "roquetes",
+    "order": 10,
+    "type": "normal"
+  },
+  {
+    "code": "rasa_sola",
+    "order": 20,
+    "type": "normal"
+  },
+  {
+    "code": "lira",
+    "order": 30,
+    "type": "normal"
+  },
+  {
+    "code": "pont_fransa",
+    "order": 40,
+    "type": "pont_fransa"
+  },
+  {
+    "code": "quatre_fonts",
+    "order": 50,
+    "type": "normal"
+  },
+  {
+    "code": "muralla",
+    "order": 60,
+    "type": "normal"
+  },
+  {
+    "code": "pl_nova",
+    "order": 70,
+    "type": "pl_nova"
+  },
+  {
+    "code": "cafes",
+    "order": 80,
+    "type": "normal"
+  },
+  {
+    "code": "rambla",
+    "order": 90,
+    "type": "rambla"
+  },
+  {
+    "code": "pl_vella",
+    "order": 100,
+    "type": "pl_vella"
+  }
+]

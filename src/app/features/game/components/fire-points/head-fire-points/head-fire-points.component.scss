@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+svg {
+  height: 45cqh;
+  margin: 0 auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  svg {
+    height: 55cqh;
+  }
+}
+
+.game-mode {
+  height: 55cqh !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .game-mode {
+    height: 65cqh !important;
+  }
+}

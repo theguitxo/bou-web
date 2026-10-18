@@ -31,7 +31,11 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "outputPath": {
+              "base": "dist/bou-web",
+              "browser": ""
+            }
           },
           "configurations": {
             "production": {
