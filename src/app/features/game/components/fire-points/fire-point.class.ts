@@ -57,6 +57,11 @@ export abstract class FirePointDirective {
     firePosition: FIREWORKS_POINTS
   ): void {
     event.stopPropagation();
+
+    if (this.gameService.isUsingHelp()) {
+      return;
+    }
+
     if (this.mode() === 'PLAY') {
       this.gameService.fireworkPlayedInfo = {
         firePosition,

@@ -107,7 +107,7 @@ export class GameFirePointComponent implements OnInit, OnDestroy {
     this.showButtons.set(false);
     this.gameService.useGameHelps();
     this.gameService.showGameHelp();
-    timer(GAME_HELP_DURATION * 1000).subscribe(() => {
+    this.timerSubscription = timer(GAME_HELP_DURATION * 1000).subscribe(() => {
       this.showButtons.set(true);
       this.gameService.resetGameHelp();
     })

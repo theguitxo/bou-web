@@ -68,6 +68,8 @@ export class GameService {
 
   private _tempPlayFireWorkPoints: FireworksPoints | undefined;
 
+  private _isUsingHelp = false;
+
   /**
    * Emite la información actualizada de los puntos de fuego y el seleccionado
    * @param gameFirePoints Información de los puntos de fuego
@@ -422,6 +424,8 @@ export class GameService {
   }
 
   public showGameHelp(): void {
+    this._isUsingHelp = true;
+
     this._tempPlayFireWorkPoints = {
       BANYES: [...this._currentGamePoint.value?.playFireworksPoints?.BANYES ?? []],
       MORRO: [...this._currentGamePoint.value?.playFireworksPoints?.MORRO ?? []],
@@ -435,10 +439,16 @@ export class GameService {
   }
 
   public resetGameHelp(): void {
+    this._isUsingHelp = false;
+
     this._currentGamePoint.next({
       ...this._currentGamePoint.value!,
       playFireworksPoints: this._tempPlayFireWorkPoints
     });
     this._tempPlayFireWorkPoints = undefined;
+  }
+
+  public isUsingHelp(): boolean {
+    return this._isUsingHelp;
   }
 }
