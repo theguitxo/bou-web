@@ -1,59 +1,30 @@
-# BouWeb
+# El Bou de Foc del Vendrell
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+## El juego de cargar carretillas y surtidores
 
-## Development server
+Juego de memoria realizado para la entidad El Bou de Foc del Vendrell ([Instagram del Bou](https://www.instagram.com/boudefoc_elvendrell/)).
 
-To start a local development server, run:
+Es un juego de memoria donde se han de recordar las combinaciones de carretillas y surtidores a usar en los diferentes puntos de encendido de la _Cercavila de Foc_ (acto de la fiesta major de El Vendrell) para, posteriormente, reproducirlas.
 
-```bash
-ng serve
-```
+En esta versión web sólo se puede jugar en modo _virtual_, pero desde la aplicación móvil para Android se puede jugar en modo _real_, debiendo estar físicamente en cada lugar del recorrido de la _Cercavila de Foc_ para poder ir colocando las carretillas y surtidores al _Bou_.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+[Juego en Google Play](https://play.google.com/store/apps/details?id=com.guitxo.boudefoc)
 
-## Code scaffolding
+## Imagenes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Pantalla inicial | Carretillas y surtidores a recordar | Lista de puntos de encendido | Selector de carretillas y surtidores | Puntuaciones finales |
+| --- | --- | --- | --- | --- |
+| ![Pantalla inicial](./bou.001.jpg "Pantalla inicial") | ![Carretillas y surtidores a recordar](./bou.002.jpg "Carretillas y surtidores a recordar") | ![Lista de puntos de encendido](./bou.003.jpg "Lista de puntos de encendido") | ![Selector de carretillas y surtidores](./bou.004.jpg "Selector de carretillas y surtidores") | ![Puntuaciones finales](./bou.005.jpg "Puntuaciones finales") |
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+***
 
-```bash
-ng generate --help
-```
 
-## Building
+Se ha usado Ionic y Angular
 
-To build the project run:
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
