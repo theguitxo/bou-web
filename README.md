@@ -20,7 +20,7 @@ En esta versión web sólo se puede jugar en modo _virtual_, pero desde la aplic
 ***
 
 
-Se ha usado Ionic y Angular
+Se ha usado Angular
 
 
 
