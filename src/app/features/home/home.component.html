@@ -1,5 +1,7 @@
 <div class="main-container">
-    <video autoplay loop [volume]="0" src="video/home.mp4" poster="video/home.jpg"></video>
+    <video autoplay loop playsinline webkit-playsinline muted [volume]="0">
+        <source src="video/home.mp4" poster="video/home.jpg">
+    </video>
     <div class="video-mask"></div>
     <div class="home-container">
         <div class="settings-container">

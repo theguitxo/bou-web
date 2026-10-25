@@ -96,7 +96,9 @@ export class App {
     'img/instructions/slide_7_image_1.svg',
     'img/instructions/slide_8_image_1.svg',
     'img/summary.svg',
-    'img/logo_bou.svg'
+    'img/logo_bou.svg',
+    'video/home.jpg',
+    'video/home.mp4'
   ]
   constructor() {
     this.settingsService.loadSettings();
