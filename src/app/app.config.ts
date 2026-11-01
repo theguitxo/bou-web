@@ -5,7 +5,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
-
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,8 +17,9 @@ export const appConfig: ApplicationConfig = {
       lang: 'ca',
       loader: provideTranslateHttpLoader({
         prefix: 'i18n/',
-        suffix: '.json'
-      })
+        suffix: '.json',
+      }),
     }),
-  ]
+    provideClientHydration(),
+  ],
 };

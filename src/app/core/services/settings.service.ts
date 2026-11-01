@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import {
   AppValues_LOCALSTORAGE_KEY,
   DEFAULT_GAME_DIFFICULTY,
@@ -13,11 +14,12 @@ import { AppValues, Settings } from '../models/settings.model';
 
 @Injectable({ providedIn: 'root' })
 export class SettingsService {
+  private readonly httpClient = inject(HttpClient);
+  private platformId = inject(PLATFORM_ID);
+
   private _settings!: Settings;
   private _appValues!: AppValues;
   private _firePoints!: FirePoints[];
-
-  private readonly httpClient = inject(HttpClient);
 
   constructor() {
     this.httpClient.get('fire.points.json').subscribe((data: Object) => {
@@ -26,25 +28,33 @@ export class SettingsService {
   }
 
   public loadSettings(): void {
-    this._settings = JSON.parse(
-      localStorage.getItem(Settings_LOCALSTORAGE_KEY) ?? '{}'
-    );
+    if (isPlatformBrowser(this.platformId)) {
+      this._settings = JSON.parse(
+        localStorage.getItem(Settings_LOCALSTORAGE_KEY) ?? '{}'
+      );
+    }
   }
 
   public saveSettings(): void {
-    const settings = JSON.stringify(this._settings);
-    localStorage.setItem(Settings_LOCALSTORAGE_KEY, settings);
+    if (isPlatformBrowser(this.platformId)) {
+      const settings = JSON.stringify(this._settings);
+      localStorage.setItem(Settings_LOCALSTORAGE_KEY, settings);
+    }
   }
 
   public loadAppValues(): void {
-    this._appValues = JSON.parse(
-      localStorage.getItem(AppValues_LOCALSTORAGE_KEY) ?? '{}'
-    );
+    if (isPlatformBrowser(this.platformId)) {
+      this._appValues = JSON.parse(
+        localStorage.getItem(AppValues_LOCALSTORAGE_KEY) ?? '{}'
+      );
+    }
   }
 
   public saveAppValues(): void {
-    const appValues = JSON.stringify(this._appValues);
-    localStorage.setItem(AppValues_LOCALSTORAGE_KEY, appValues);
+    if (isPlatformBrowser(this.platformId)) {
+      const appValues = JSON.stringify(this._appValues);
+      localStorage.setItem(AppValues_LOCALSTORAGE_KEY, appValues);
+    }
   }
 
   get firePoints(): FirePoints[] {
