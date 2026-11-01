@@ -1,10 +1,10 @@
 @font-face {
   font-family: "luckiestguy";
   src:
-    url("/bou-web/fonts/LuckiestGuy-Regular.eot") format("embedded-opentype"),
-    url("/bou-web/fonts/LuckiestGuy-Regular.woff") format("woff"),
-    url("/bou-web/fonts/LuckiestGuy-Regular.woff2") format("woff2"),
-    url("/bou-web/fonts/LuckiestGuy-Regular.ttf") format("truetype");
+    url("/fonts/LuckiestGuy-Regular.eot") format("embedded-opentype"),
+    url("/fonts/LuckiestGuy-Regular.woff") format("woff"),
+    url("/fonts/LuckiestGuy-Regular.woff2") format("woff2"),
+    url("/fonts/LuckiestGuy-Regular.ttf") format("truetype");
 }
 
 :root {
@@ -84,7 +84,7 @@ body {
   -moz-text-size-adjust: 100% !important;
   text-size-adjust: 100% !important;
 
-  background: url('/bou-web/img/background.jpg');
+  background: url('/img/background.jpg');
   background-size: cover;
 
   position: relative;
