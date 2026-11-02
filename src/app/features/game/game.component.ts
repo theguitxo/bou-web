@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, inject, OnDestroy, OnInit } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { Router, RouterModule } from "@angular/router";
 import { TranslatePipe } from "@ngx-translate/core";
@@ -19,7 +19,6 @@ export class GameComponent implements OnInit, OnDestroy {
     private readonly gameService = inject(GameService);
     private readonly router = inject(Router);
     private readonly modalService = inject(ModalService);
-    private readonly destroyRef = inject(DestroyRef);
 
     private allPlayed = toSignal(this.gameService.allPlayed);
     protected checkingFirePoint = toSignal(this.gameService.chekingFirePoint);
@@ -27,7 +26,11 @@ export class GameComponent implements OnInit, OnDestroy {
     private exitGameModal!: ModalRef<ConfirmModalResult>;
 
     ngOnInit(): void {
-        this.gameService.generateGame();
+        if (this.gameService.isPlaying) {
+            this.gameService.generateGame();
+        } else {
+            this.router.navigate([APP_ROUTES.HOME]);
+        }
     }
 
     ngOnDestroy(): void {

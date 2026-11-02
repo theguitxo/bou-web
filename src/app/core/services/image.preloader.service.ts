@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable, take, timer } from 'rxjs';
 
 @Injectable()
 export class ImagePreloaderService {
   private progress$ = new BehaviorSubject<number>(0);
+  private platoformId = inject(PLATFORM_ID);
 
   getDownloadProgress(): Observable<number> {
     return this.progress$.asObservable();
@@ -11,7 +13,7 @@ export class ImagePreloaderService {
 
   preloadImages(images: string[]): Promise<void> {
     return new Promise((resolve) => {
-      if (!images || images.length === 0) {
+      if (!images || images.length === 0 || isPlatformServer(this.platoformId)) {
         this.progress$.next(1);
         resolve();
         return;

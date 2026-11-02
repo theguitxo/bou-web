@@ -70,6 +70,16 @@ export class GameService {
 
   private _isUsingHelp = false;
 
+  private _isPlaying = false;
+
+  get isPlaying(): boolean {
+    return this._isPlaying;
+  }
+
+  set isPlaying(value: boolean) {
+    this._isPlaying = value;
+  }
+
   /**
    * Emite la información actualizada de los puntos de fuego y el seleccionado
    * @param gameFirePoints Información de los puntos de fuego
@@ -192,6 +202,7 @@ export class GameService {
    * Resetea la información de la partida
    */
   public finishGame(): void {
+    this._isPlaying = false;
     this._gameFirePoints.next(undefined);
   }
 

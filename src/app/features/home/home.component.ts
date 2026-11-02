@@ -1,10 +1,11 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { take } from 'rxjs';
 import { ConfirmModalComponent, ConfirmModalResult } from '../../components/confirm-modal/confirm-modal.component';
 import { ModalRef } from '../../core/classes/modalref.class';
 import { APP_ROUTES } from '../../core/constants/routes.constants';
+import { GameService } from '../../core/services/game.service';
 import { ModalService } from '../../core/services/modal.service';
 import { SettingsService } from '../../core/services/settings.service';
 import { LogoHomeComponent } from './components/logo-home/logo-home.component';
@@ -15,12 +16,18 @@ import { LogoHomeComponent } from './components/logo-home/logo-home.component';
     styleUrl: './home.component.scss',
     imports: [TranslatePipe, LogoHomeComponent],
 })
-export class HomeComponent implements OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
     private readonly settingsService = inject(SettingsService);
     private readonly modalService = inject(ModalService);
     private readonly router = inject(Router);
+    private readonly gameService = inject(GameService);
 
     private instructionsModal!: ModalRef<ConfirmModalResult>;
+
+
+    ngOnInit(): void {
+        this.gameService.isPlaying = false;
+    }
 
     ngOnDestroy(): void {
         this.instructionsModal?.close();
@@ -35,6 +42,7 @@ export class HomeComponent implements OnDestroy {
     }
 
     private playGame(): void {
+        this.gameService.isPlaying = true;
         this.router.navigate([APP_ROUTES.GAME]);
     }
 
