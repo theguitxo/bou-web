@@ -71,7 +71,7 @@ export class SettingsService {
   }
 
   get gameDifficulty(): GAME_DIFFICULTY {
-    return this._settings.gameDifficulty ?? DEFAULT_GAME_DIFFICULTY;
+    return this._settings?.gameDifficulty ?? DEFAULT_GAME_DIFFICULTY;
   }
 
   set gameDifficulty(value: GAME_DIFFICULTY) {
