@@ -84,7 +84,8 @@ body {
   text-size-adjust: 100% !important;
 
   background: url('../public/img/background.jpg');
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
 
   position: relative;
   max-width: 100vw;
