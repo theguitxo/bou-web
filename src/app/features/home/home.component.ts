@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { take } from 'rxjs';
@@ -16,7 +16,7 @@ import { LogoHomeComponent } from './components/logo-home/logo-home.component';
     styleUrl: './home.component.scss',
     imports: [TranslatePipe, LogoHomeComponent],
 })
-export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
+export class HomeComponent implements OnInit, OnDestroy {
     private readonly settingsService = inject(SettingsService);
     private readonly modalService = inject(ModalService);
     private readonly router = inject(Router);
@@ -24,18 +24,12 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
     private instructionsModal!: ModalRef<ConfirmModalResult>;
 
-    protected backgroundTransparent = signal<boolean>(false);
-
     ngOnInit(): void {
         this.gameService.isPlaying = false;
     }
 
     ngOnDestroy(): void {
         this.instructionsModal?.close();
-    }
-
-    ngAfterViewInit(): void {
-        this.backgroundTransparent.set(true);
     }
 
     protected navigateConfiguration(): void {
