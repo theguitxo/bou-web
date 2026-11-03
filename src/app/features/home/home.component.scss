@@ -1,5 +1,6 @@
 .main-container {
-    background: transparent;
+    z-index: -110;
+    position: absolute;
 }
 
 .logo-container {
@@ -37,7 +38,6 @@ video {
     height: 100%;
     object-fit: cover;
     z-index: -100;
-    background-color: var(--background-color);
 }
 
 .video-mask {
