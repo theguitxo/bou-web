@@ -8,6 +8,8 @@ Es un juego de memoria donde se han de recordar las combinaciones de carretillas
 
 En esta versión web sólo se puede jugar en modo _virtual_, pero desde la aplicación móvil para Android se puede jugar en modo _real_, debiendo estar físicamente en cada lugar del recorrido de la _Cercavila de Foc_ para poder ir colocando las carretillas y surtidores al _Bou_.
 
+[Versión web](https://theguitxo.github.io/bou-web/)
+
 [Juego en Google Play](https://play.google.com/store/apps/details?id=com.guitxo.boudefoc)
 
 ## Imagenes
